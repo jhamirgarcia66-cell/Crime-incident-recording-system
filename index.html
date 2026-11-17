@@ -1,0 +1,140 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crime Incident Recording System</title>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>CRIME INCIDENT RECORDING SYSTEM</h1>
+    <p>Incident Recording, Monitoring and Severity Classification</p>
+</header>
+
+<div class="container">
+
+    <div class="cards">
+        <div class="card">
+            <p>Total Incidents</p>
+            <h2 id="total">0</h2>
+        </div>
+        <div class="card">
+            <p>Low Severity</p>
+            <h2 id="low">0</h2>
+        </div>
+        <div class="card">
+            <p>High Severity</p>
+            <h2 id="high">0</h2>
+        </div>
+        <div class="card">
+            <p>Critical Incidents</p>
+            <h2 id="critical">0</h2>
+        </div>
+    </div>
+
+    <section class="panel">
+        <h2 id="formTitle">Record New Crime Incident</h2>
+
+        <form id="incidentForm">
+            <input type="hidden" id="editId">
+
+            <div class="form-grid">
+                <div class="field">
+                    <label>Incident Date *</label>
+                    <input type="date" id="date" required>
+                </div>
+
+                <div class="field">
+                    <label>Crime Type *</label>
+                    <select id="type" required>
+                        <option value="">Select Crime Type</option>
+                        <option>Theft</option>
+                        <option>Robbery</option>
+                        <option>Assault</option>
+                        <option>Physical Injury</option>
+                        <option>Vandalism</option>
+                        <option>Burglary</option>
+                        <option>Other</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label>Incident Location *</label>
+                    <input type="text" id="location" required>
+                </div>
+
+                <div class="field">
+                    <label>Complainant Name *</label>
+                    <input type="text" id="complainant" required>
+                </div>
+
+                <div class="field">
+                    <label>Severity Classification *</label>
+                    <select id="severity" required>
+                        <option value="">Select Severity</option>
+                        <option>Low</option>
+                        <option>Medium</option>
+                        <option>High</option>
+                        <option>Critical</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label>Incident Status</label>
+                    <select id="status">
+                        <option>Pending</option>
+                        <option>Under Investigation</option>
+                        <option>Resolved</option>
+                    </select>
+                </div>
+
+                <div class="field full">
+                    <label>Incident Description *</label>
+                    <textarea id="description" required></textarea>
+                </div>
+            </div>
+
+            <br>
+            <button type="submit" class="save" id="saveBtn">
+                Save Incident
+            </button>
+            <button type="button" class="cancel" onclick="resetForm()">
+                Clear Form
+            </button>
+        </form>
+    </section>
+
+    <section class="panel">
+        <h2>Recorded Crime Incidents</h2>
+
+        <div class="toolbar">
+            <input type="search" id="search" placeholder="Search incidents...">
+
+            <select id="filter">
+                <option value="">All Severity Levels</option>
+                <option>Low</option>
+                <option>Medium</option>
+                <option>High</option>
+                <option>Critical</option>
+            </select>
+        </div>
+
+        
+    </section>
+
+</div>
+
+<footer>
+    Crime Incident Recording System | CIRS
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
